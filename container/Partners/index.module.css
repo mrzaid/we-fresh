@@ -1,0 +1,71 @@
+.bgimg {
+  position: absolute;
+  z-index: -9;
+  top: 60px;
+  left: -25%;
+  
+  min-width: 540px;
+  height: 400px;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.partnerImgs div span {
+  width: 175px !important;
+  height: 175px !important;
+}
+
+.bg1 {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 2;
+}
+
+.bg2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg3 {
+  position: absolute;
+  top: -75%;
+  right: 0;
+}
+
+.bg4 {
+  position: absolute;
+  bottom: -75%;
+  left: 0;
+}
+
+.bg5 {
+  position: absolute;
+  bottom: -100%;
+  right: 0;
+  transform: translateX(-20%);
+}
+
+@media screen and (max-width: 843px) {
+  .bgimg {
+  left: -25%;}
+}
+@media screen and (max-width: 767px) {
+  .partnerImgs div span {
+    width: 115px !important;
+    height: 115px !important;
+  }
+  .bgimg {
+   
+    top: 60px;
+    left: 0;
+    object-fit: contain;
+  }
+}
