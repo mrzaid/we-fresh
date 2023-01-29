@@ -18,10 +18,10 @@ type Props = {
 function Layout({ children }: Props) {
   return (
     <div className="layout">
-         <Head>
+         {/* <Head>
         <title>WeFresh</title>
-        <Link  href="../public/assets/logo.png" />
-      </Head>
+        <link  href="../public/assets/logo.png" />
+      </Head> */}
       <header>
         <Header />
       </header>
