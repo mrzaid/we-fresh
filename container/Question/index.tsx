@@ -2,7 +2,7 @@ import React from "react";
 import ContactBox from "../../components/common/ContactBox";
 import Container from "../../components/common/Container";
 import Accordion from "../../components/common/Accordion";
-const Question = () => {
+const Question = ({data}:any) => {
   return (
     <section id="english" className="md:mt-[250px]">
       <Container>

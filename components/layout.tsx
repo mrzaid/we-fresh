@@ -1,14 +1,11 @@
 import Head from "next/head";
-import { ReactNode } from "react";
 import Header from "../components/common/Header";
-
 import Footer from "../components/common/Footer";
-import Link from "next/link";
-type Props = {
-  children?: ReactNode;
-};
+import { Children } from "react";
 
-function Layout({ children }: Props) {
+
+function Layout({ children,pageProps }: any) {
+   console.log('layouttsxdata',pageProps)
   return (
     <div className="layout">
          <Head>

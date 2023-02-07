@@ -2,7 +2,8 @@ import React from "react";
 import Container from "../../components/common/Container";
 import styles from "./index.module.css";
 
-export const Partners = () => {
+export const Partners = ({data}:any) => {
+  console.log('partners')
   return (
     <section className="mt-[150px] md:mb-[100px] relative">
       <div
@@ -36,6 +37,12 @@ export const Partners = () => {
 
           <div className="md:justify-end md:relative md:right-0  sm:justify-center sm:right-0 pt-[50px]  relative mb-[100px]">
             <div className={"h-[350px] relative w-[600px]" + styles.partnerImgs}>
+           {/*  <div
+                className={value.title==="7-Eleven" ? " bg2 absolute sm:top-[85px]  sm:right-0  top-[125px] right-0 w-full max-w-[91px] sm:max-w-[175px] "
+              : 
+              
+              }
+              > */}
               <div
                 className="bg1  absolute sm:top-0 sm:left-[-15px] top-[100px]
               w-full max-w-[91px] sm:max-w-[175px]"

@@ -1,8 +1,8 @@
 import React from "react";
 import Container from "../../components/common/Container";
 import styles from "./index.module.css";
-export const Freshmart = () => {
-  var data = [
+export const Freshmart = ({data}:any) => {
+  var det = [
     {
       title: "Lorem ipsum dolor sit",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ",
@@ -37,7 +37,7 @@ export const Freshmart = () => {
             </div>
             <div className=" flex-1 min-w-[320px] md:max-w-[560px]  ">
               <div className=" mx-auto ">
-                {data.map(({ title, desc, selected }) => {
+                {det.map(({ title, desc, selected }) => {
                   return (
                     <div className=" min-w-[320px] md:w-[560px]">
                       <div className={`${selected ? "bg-lbluee" : ""}`}>

@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../components/common/Button";
 import Input from "../../components/common/Input";
 import Container from "../../components/common/Container";
-const WeFresh = () => {
+const WeFresh = ({data}:any) => {
   return (
     <section id="forbusiness" className="">
 

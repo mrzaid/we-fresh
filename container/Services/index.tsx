@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./index.module.css";
 import "swiper/css";
 
-const Services = () => {
+const Services = ({data}:any) => {
   const content = [
     {
       title: "Store",
@@ -29,7 +29,7 @@ const Services = () => {
   ];
 
   return (
-    <section className={ "mt-[0px] "}>
+    <section className={ "mt-[0px] mb-[115px]"}>
       <Container>
         <div className="hidden md:block">
         <div className="text-bluee  ">

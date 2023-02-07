@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "../../components/common/Container";
-const GetApp = () => {
+const GetApp = ({data}:any) => {
   return (
     <section className=" bg-blu mt-[74px] ">
 

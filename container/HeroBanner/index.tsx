@@ -1,23 +1,40 @@
+//Packages
 import React from "react";
+
+// Components
 import Button from "../../components/common/Button";
 import Input from "../../components/common/Input";
 import Container from "../../components/common/Container";
+import RichTextRenderer from "../../components/common/RichTextRenderer";
+
+// Styles
 import styles from "./index.module.css";
-const HeroBanner = () => {
+
+interface iconsType {
+  socialLink: {
+    url: string;
+  };
+  socialsImage: {
+    url: string;
+    title: string;
+  };
+}
+
+const HeroBanner = ({ data }: any) => {
+  console.log("herobanner", data);
+  const { heroDescription, heroImage, heroSocialsCollection } = data?.items[0];
+  // const {socialLink,socialsImage} =heroSocialCollection?.items[0]
   return (
     <section id="ourapp">
-  
       <div className={styles.herobannerImg1}>
         <img src={"/assets/hero/Fill4.png"} alt="bannerBgImg1" />
       </div>
       <div className={styles.herobannerImg2}>
         <img src={"/assets/hero/Fill1.png"} alt="bannerBgImg2" />
       </div>
-
       <div className={styles.herobannerImg5}>
         <img src={"/assets/hero/Fill3.png"} alt="bannerBgImg5" />
       </div>
-
       <Container>
         <div className=" main flex flex-col md:flex-row ">
           <div className="max-w-[481px] mx-auto md:ml-0   ">
@@ -28,12 +45,13 @@ const HeroBanner = () => {
             >
               <img className="h-full w-full" src={"/assets/fill4mq.png"} />
             </div>
-
-            <h1 className="text-2xl md:text-6xl text-center md:text-left	font-normal	md:mt-32  ">
+            {/* <h1 className="text-2xl md:text-6xl text-center md:text-left	font-normal	md:mt-32  ">
               <span className="text-white	">The smarter way</span>
               <br></br>
               <span className=" text-white	 font-bold">to order your food</span>
-            </h1>
+            </h1> */}
+            <RichTextRenderer json={heroDescription.json} />
+
             <div className="mt-10 flex gap-5 ">
               <div className=" text-base ">
                 <Input
@@ -57,12 +75,17 @@ const HeroBanner = () => {
               Available on
             </p>
             <div className="  mt-6 flex justify-center md:justify-start gap-5 mb-[100px]">
-              <button>
-                <img src={"/assets/Apple.png"} />
-              </button>
-              <button>
-                <img src={"/assets/Googleplay.png"} />
-              </button>
+              <button>{/* <img src={"/assets/Apple.png"} /> */}</button>
+              <button>{/* <img src={"/assets/Googleplay.png"} /> */}</button>
+              {heroSocialsCollection.items.map(
+                ({ socialLink, socialsImage }: iconsType) => (
+                  <a href={socialLink.url} target="_blank">
+                    <button>
+                      <img src={socialsImage.url} alt={socialsImage.title} />
+                    </button>
+                  </a>
+                )
+              )}
             </div>
 
             <div
@@ -76,10 +99,14 @@ const HeroBanner = () => {
 
           <div className=" flex flex-row mx-auto md:mr-0 right-0 max-w-[481px]  relative  mb-[40px]">
             <div className={styles.herobgYellow}>
-              <img className="w-full" src={"/assets/hero/Fill2.png"} alt="bg-yellow" />
+              <img
+                className="w-full"
+                src={"/assets/hero/Fill2.png"}
+                alt="bg-yellow"
+              />
             </div>
             <div className={"right-0" + styles.herobannerImg}>
-              <img src={"/assets/hero/iPhone_Black.svg"} alt="phone" />
+              <img src={heroImage.url} alt={heroImage.title} />
             </div>
           </div>
         </div>

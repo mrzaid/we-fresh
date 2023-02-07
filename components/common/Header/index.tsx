@@ -63,11 +63,11 @@ const Header = () => {
           </div>
 
           <ul
-            className={`header-nav-container gap-6  flex flex-col md:flex-row
+            className={`header-nav-container gap-14  flex flex-col md:flex-row
                  md:pb-0  absolute
                  md:static md:z-auto z-[1] left-0 w-full md:w-auto 
                  md:pl-0 pl-6 pr-6 transition-all duration-500 ease-in ${
-                   open ? "top-0 " : "top-[-490px] "
+                   open ? "top-0 " : "top-[-580px] "
                  } `}
           >
             {mymenu.map(({ title, id }) => (
