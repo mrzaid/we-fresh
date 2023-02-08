@@ -1,9 +1,16 @@
 import React from "react";
 import Container from "../../components/common/Container";
+import RichTextRenderer from "../../components/common/RichTextRenderer";
+
+
+
 import styles from "./index.module.css";
 
 export const Partners = ({data}:any) => {
-  console.log('partners')
+  console.log('partners',data)
+  const {partnerImagesCollection,partnersContent}=data.items[0]
+
+
   return (
     <section className="mt-[150px] md:mb-[100px] relative">
       <div
@@ -20,11 +27,15 @@ export const Partners = ({data}:any) => {
               <span className=" text-bluee	 font-bold">Partners</span>
             </h1>
             <div className=" min-w-[220px] max-w-[400px] text-center md:text-left  mt-10  md:w-80 mx-auto md:ml-0">
-              <p className="text-greyy font-normal text-xl   ">
+              
+              {/* <p className="text-greyy font-normal text-xl   ">
                 Lorem ipsum dolor sit, amet tene consectetur adipisisdsadcing
                 elit. Vero, tenetur assumenda reiciendis esse aasdas dasd fdasf
                 ccusamus, culpa alias eum non deleniti
-              </p>
+              </p> */}
+              <RichTextRenderer
+              json={partnersContent.json}
+              />
             </div>
             <div
               className={
@@ -43,6 +54,7 @@ export const Partners = ({data}:any) => {
               
               }
               > */}
+              
               <div
                 className="bg1  absolute sm:top-0 sm:left-[-15px] top-[100px]
               w-full max-w-[91px] sm:max-w-[175px]"

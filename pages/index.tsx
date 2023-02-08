@@ -26,9 +26,8 @@ export async function getStaticProps() {
   };
 }
 
-export default function HomePage({ data,websiteDetails }: any) {
-  console.log("websiteDetails", websiteDetails);
-  console.log("data", data);
+export default function HomePage({ data }: any) {
+
   const {heroCollection,servicesCollection,findUsCollection,partnersCollection,questionsCollection,getAppCollection,weFreshCollection}=data
   return (
     <>

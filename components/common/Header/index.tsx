@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Container from "../../common/Container";
 
-const Header = () => {
+const Header = ({headerdata}:any) => {
   const mymenu = [
     {
       title: "Our App",

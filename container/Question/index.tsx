@@ -7,10 +7,10 @@ const Question = ({data}:any) => {
     <section id="english" className="md:mt-[250px]">
       <Container>
         <div className="text-bluee mb-[44px]  ">
-          <h1 className="text-2xl  md:text-5xl text-center	font-normal	mt-32 text-bluee ">
+          <h1 className="text-2xl  md:text-5xl text-center	font-normal 	md:mt-32 text-bluee ">
             <span className="">Got questions?</span>
           </h1>
-          <p className="  text-greyy wrap text-center text-base pt-8 leading-8 font-normal">
+          <p className="  text-greyy wrap text-center text-base pt-8 pb-8 leading-8 font-normal">
             Perfect, we've got answers!
           </p>
         </div>
@@ -38,7 +38,7 @@ const Question = ({data}:any) => {
         </div>
 
         <div className="text-bluee mb-[44px]  ">
-          <h1 className="sm:text-2xl md:text-5xl text-center	font-normal	mt-32 text-bluee ">
+          <h1 className="sm:text-2xl md:text-5xl text-center	font-normal mt-[95px]	md:mt-32 text-bluee ">
             <span className="">Still have a question?</span>
           </h1>
           <div className="min-w-[250px] md:w-[600px] mx-auto flex items-center justify-items-center">
@@ -48,7 +48,7 @@ const Question = ({data}:any) => {
             </p>
           </div>
         </div>
-        <div className=" flex flex-col md:flex-row md:justify-center md:gap-5	md:mb-[68px] ">
+        <div className=" flex flex-col md:flex-row md:justify-center md:gap-5 gap-5	md:mb-[68px] ">
           <ContactBox
             primary="+66 8959888"
             secondary="Lorem ipsum dolor sit amet, consectetur"

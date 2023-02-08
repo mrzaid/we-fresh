@@ -50,7 +50,9 @@ const HeroBanner = ({ data }: any) => {
               <br></br>
               <span className=" text-white	 font-bold">to order your food</span>
             </h1> */}
-            <RichTextRenderer json={heroDescription.json} />
+            <div className="">
+              <RichTextRenderer json={heroDescription.json} />
+            </div>
 
             <div className="mt-10 flex gap-5 ">
               <div className=" text-base ">

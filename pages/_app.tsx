@@ -2,10 +2,11 @@ import Layout from "../components/layout";
 import "../styles/index.css";
 import "../styles/header.css";
 function MyApp({ Component, pageProps }: any) {
-  // console.log('page',pageProps)
+ console.log('page',pageProps)
+ const {websiteDetails} =pageProps
   return (
     // layoutData={pageProps}
-    <Layout  >
+    <Layout data={websiteDetails} >
       <Component {...pageProps} />
     </Layout>
   );

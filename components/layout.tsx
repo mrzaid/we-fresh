@@ -4,8 +4,8 @@ import Footer from "../components/common/Footer";
 import { Children } from "react";
 
 
-function Layout({ children,pageProps }: any) {
-   console.log('layouttsxdata',pageProps)
+function Layout({ children,data }: any) {
+   const {footerCollection,headerCollection}=data
   return (
     <div className="layout">
          <Head>
@@ -13,11 +13,11 @@ function Layout({ children,pageProps }: any) {
         <link  href="../public/assets/logo.png" />
       </Head>
       <header>
-        <Header />
+        <Header headerdata={headerCollection} />
       </header>
       <main className="">{children}</main>
    
-      <Footer/>
+      <Footer footerdata={footerCollection}/>
     </div>
   );
 }
