@@ -2,25 +2,27 @@ import { useState } from "react";
 import Link from "next/link";
 import Container from "../../common/Container";
 
-const Header = ({headerdata}:any) => {
-  const mymenu = [
-    {
-      title: "Our App",
-      id: "ourapp",
-    },
-    {
-      title: "For Business",
-      id: "forbusiness",
-    },
-    {
-      title: "About Us",
-      id: "aboutus",
-    },
-    {
-      title: "English",
-      id: "english",
-    },
-  ];
+const Header = ({ headerdata }: any) => {
+  console.log("headerdata", headerdata);
+  const { headerLogo, headerLinksCollection } = headerdata.items[0];
+  // const mymenu = [
+  //   {
+  //     title: "Our App",
+  //     id: "ourapp",
+  //   },
+  //   {
+  //     title: "For Business",
+  //     id: "forbusiness",
+  //   },
+  //   {
+  //     title: "About Us",
+  //     id: "aboutus",
+  //   },
+  //   {
+  //     title: "English",
+  //     id: "english",
+  //   },
+  // ];
   const [open, setOpen] = useState<Boolean>(false);
 
   return (
@@ -39,7 +41,7 @@ const Header = ({headerdata}:any) => {
       <Container>
         <div className="h-24 bg-none md:flex justify-between items-center py-4 ">
           <div className="flex z-[3] justify-items-start	  ">
-            <img src={"/assets/logo.png"}></img>
+            <img src={headerLogo.url} alt={headerLogo.title}></img>
           </div>
           <div
             onClick={() => setOpen(!open)}
@@ -70,13 +72,14 @@ const Header = ({headerdata}:any) => {
                    open ? "top-0 " : "top-[-580px] "
                  } `}
           >
-            {mymenu.map(({ title, id }) => (
+            {headerLinksCollection?.items?.map(({ text, url }: any) => (
               <li className="li  text-white md:text-black border-blue-100">
-                <Link key={id} href={`#${id}`}>
-                  {title}
-                </Link>
+                <a href={url} target={"_blank"}>
+                  {text}
+                </a>
               </li>
             ))}
+
             <li className="navbar-button w-full md:hidden">
               <button className="bg-orangee min-w-[280px] w-full rounded h-8">
                 Sign up

@@ -24,7 +24,6 @@ const Footer = ({ footerdata }: any) => {
               <img alt={footerLogo.title} src={footerLogo.url} />
             </a>
           </div>
-
           {footerLinksCollection?.items?.map(
             ({ title, footerLinksCollection }: any) => (
               <nav className="px-[20px]">
@@ -41,86 +40,7 @@ const Footer = ({ footerdata }: any) => {
               </nav>
             )
           )}
-
-          {/* <nav className="px-[20px]">
-            <p className="font-bold ">SERVICE AREA</p>
-
-            <ul className="  py-[15px]">
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Lorem
-                </a>
-              </li>
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Psum
-                </a>
-              </li>
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Sum
-                </a>
-              </li>
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Lorem
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <nav className="px-[20px]">
-            <p className="font-bold ">ABOUT</p>
-            <ul className="  py-[15px]">
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Lorem
-                </a>
-              </li>
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Psum
-                </a>
-              </li>
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Sum
-                </a>
-              </li>
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Lorem
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <nav className="px-[20px]">
-            <p className="font-bold ">HELP</p>
-            <ul className="  py-[15px]">
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Lorem
-                </a>
-              </li>
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Psum
-                </a>
-              </li>
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Sum
-                </a>
-              </li>
-              <li className="py-[5px]">
-                <a className="text-greyy" href="#">
-                  Lorem
-                </a>
-              </li>
-            </ul>
-          </nav> */}
-
+         
           <nav className="mx-auto">
             <p className="text-greyy ">Available on</p>
             <div className="mt-6 flex gap-5 mb-[60px]">

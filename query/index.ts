@@ -45,7 +45,7 @@ query{
       }
     }
   }`;
-export const HomePageQuery=`
+export const HomePageQuery = `
 query{
   heroCollection(limit: 0) {
     items {
@@ -71,6 +71,7 @@ query{
   }
   servicesCollection (limit: 0){
     items{
+      title{json}
       servicesContentCollection{
         items{
           title
@@ -163,4 +164,4 @@ query{
       }
     }
   }
-}`
+}`;

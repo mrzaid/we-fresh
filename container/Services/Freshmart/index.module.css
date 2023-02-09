@@ -1,0 +1,14 @@
+@media screen and (max-width: 1000px) {
+  .mq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content {
+    align-items: center;
+  }
+}
+
+.servicesContent p {
+  color: red !important ;
+}

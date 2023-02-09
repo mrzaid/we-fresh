@@ -1,16 +1,20 @@
 import React, { useRef, useState } from "react";
 import Container from "../../common/Container";
+import RichTextRenderer from "../RichTextRenderer";
 
 interface AccordionProps {
   title: React.ReactNode;
-  contentTitle: React.ReactNode;
-  content: React.ReactNode;
+  // contentTitle: React.ReactNode;
+  // content: React.ReactNode;
+  jsondata: any;
 }
 
 const Accordion: React.FC<AccordionProps> = ({
+  // title,
+  // contentTitle,
+  // content,
   title,
-  contentTitle,
-  content,
+  jsondata,
 }) => {
   const [active, setActive] = useState(false);
   const [height, setHeight] = useState("0px");
@@ -31,9 +35,11 @@ const Accordion: React.FC<AccordionProps> = ({
             className="w-full  m-3 mx-auto  border-sgrey border-2	rounded-xl cursor-pointer focus:outline-none "
             onClick={toggleAccordion}
           >
-            <p className=" text-left pl-[41px] text-black font-semibold	wrap  text-base p-[20px] leading-8 ">
-              {title}
-            </p>
+            <div>
+              <p className=" text-left pl-[41px] text-black font-semibold	wrap  text-base p-[20px] leading-8 ">
+                {title}
+              </p>
+            </div>
           </button>
         </div>
         <div
@@ -42,17 +48,16 @@ const Accordion: React.FC<AccordionProps> = ({
           className="overflow-hidden transition-max-height duration-700 ease-in-out"
         >
           <div className="w-full m-3 mx-auto  border-bluee border-2 rounded-xl overflow-hidden		">
-            <p
+            {/* <p
               className="w-full pl-[41px] text-bluee font-semibold	pt-[20px]
   wrap  text-base  leading-8 "
             >
               {contentTitle}
             </p>
-            <div className="">
               <p className="pl-[41px] pr-[60px] text-greyy wrap pt-[12px] pb-[28px] text-base  leading-8 ">
                 {content}
-              </p>
-            </div>
+              </p> */}
+            <RichTextRenderer json={jsondata.json} />
           </div>
         </div>
       </div>
