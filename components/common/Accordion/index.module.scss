@@ -1,0 +1,16 @@
+.accordion {
+  h2 {
+    font-size: var(--heading-secondary);
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    padding-left: 41px;
+    padding-top: 20px;
+  }
+  p {
+    font-size: var(--text-size);
+    line-height: 30px;
+    padding-left: 41px;
+    padding-bottom: 28px;
+    padding-right: 60px;
+  }
+}

@@ -17,18 +17,15 @@ export const Partners = ({ data }: any) => {
       </div>
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 mx-auto md:m-0 gap-[50px] ">
-          <div className="  flex flex-col items-center md:mb-[133px] md:mb-0 relative">
-            <h1 className="text-2xl md:text-6xl	font-normal	mt-32 mx-auto md:ml-0 text-center md:text-left  ">
+          <div className="  flex flex-col items-center mt-[60px] md:mt-0 md:mb-[133px]  relative ">
+            <h1 className="text-2xl md:text-6xl	font-normal  md:mt-32 mx-auto md:ml-0 text-center md:text-left  ">
               <span className="text-bluee	">Our </span>
               <span className=" text-bluee	 font-bold">Partners</span>
             </h1>
             <div className=" min-w-[220px] max-w-[400px] text-center md:text-left  mt-10  md:w-80 mx-auto md:ml-0">
-              {/* <p className="text-greyy font-normal text-xl   ">
-                Lorem ipsum dolor sit, amet tene consectetur adipisisdsadcing
-                elit. Vero, tenetur assumenda reiciendis esse aasdas dasd fdasf
-                ccusamus, culpa alias eum non deleniti
-              </p> */}
-              <RichTextRenderer json={partnersContent.json} />
+              <div className={`${styles.partners}`}>
+                <RichTextRenderer json={partnersContent.json} />
+              </div>
             </div>
             <div
               className={

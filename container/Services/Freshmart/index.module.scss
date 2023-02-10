@@ -9,20 +9,25 @@
   }
 }
 .servicesContent h2 {
-  color: "#68BAE3";
+  color: var(--text-secondary);
   font-size: 24px;
   line-height: 32px;
   font-weight: 400;
-  padding-top: 32px;
+  padding-top: 33px;
+  padding-left: 50px;
+  padding-right: 40px;
 }
 .servicesContent p {
-  color: "#868E95";
+  color: var(--text-primary);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
+  padding-left: 50px;
+  padding-right: 40px;
 }
 .bg div:nth-child(2) {
   background-color: #ebf7fc;
+  border-radius: 10px;
 }

@@ -1,5 +1,10 @@
-.question {
-  h2 {
+.image {
+  a:first-child {
+    padding-top: 10px;
+  }
+}
+.getApp {
+  h1 {
     text-align: center;
     color: var(--text-secondary);
     line-height: 32px;
@@ -7,6 +12,7 @@
     padding-bottom: 20px;
   }
   p {
+    max-width: 540px;
     margin-bottom: 40px;
     margin-top: 4px;
     text-align: center;
@@ -14,8 +20,8 @@
   }
 }
 @media screen and (max-width: 767px) {
-  .question {
-    h2 {
+  .getApp {
+    h1 {
       text-align: center;
       color: var(--text-secondary);
       line-height: 32px;

@@ -40,16 +40,10 @@ const Footer = ({ footerdata }: any) => {
               </nav>
             )
           )}
-         
+
           <nav className="mx-auto">
             <p className="text-greyy ">Available on</p>
             <div className="mt-6 flex gap-5 mb-[60px]">
-              {/* <button>
-              <img src={"/assets/Apple.png"} />
-            </button>
-            <button>
-              <img src={"/assets/Googleplay.png"} />
-            </button> */}
               {footerSocialsCollection.items.map(
                 ({ socialLink, socialsImage }: iconsType) => (
                   <a href={socialLink.url} target="_blank">

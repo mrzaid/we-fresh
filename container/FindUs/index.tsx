@@ -18,11 +18,7 @@ const FindUs = ({ data }: any) => {
       <Container>
         <div className={" flex " + styles.mq}>
           <div className="  flex  justify-center    ">
-            <div className=" pb-32 mt-32">
-              {/* <h1 className=" text-2xl md:text-5xl	font-normal	 text-bluee  ">
-                <span className="">Find us in these</span>
-                <span className="font-bold"> Area</span>
-              </h1> */}
+            <div className={`pb-32 mt-32 ${styles.heading}`}>
               <RichTextRenderer json={title.json} />
               <div className="mt-10 flex gap-5 ">
                 <div className=" text-base ">

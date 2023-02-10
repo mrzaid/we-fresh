@@ -1,0 +1,25 @@
+// const ContactBox:FC<ContactBox> = ({ primary, secondary }) => {
+//   return (
+//     <div className=" flex flex-col rounded-lg justify-end p-6 border-2 h-36 ">
+//       <div>
+//         <p className="text-center">{primary}</p>
+//         <p className="text-xs text-slate-400 text-center">{secondary}</p>
+//       </div>
+//     </div>
+//   );
+// };
+
+.contactbox {
+  h4 {
+    text-align: center;
+    font-size: var(--text-size);
+    color: "#14243C";
+    font-size: var(--heading-secondary);
+  }
+  p {
+    text-align: center;
+    font-size: var(--text-size);
+    color: var(--text-primary);
+    font-size: var(--heading-secondary);
+  }
+}

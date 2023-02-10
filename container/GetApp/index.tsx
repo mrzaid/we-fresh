@@ -2,6 +2,9 @@ import React from "react";
 import Container from "../../components/common/Container";
 import RichTextRenderer from "../../components/common/RichTextRenderer";
 
+//styles
+import styles from "./index.module.scss";
+
 interface iconsType {
   socialLink: {
     url: string;
@@ -15,33 +18,21 @@ interface iconsType {
 const GetApp = ({ data }: any) => {
   const { appDescription, appSocialsCollection } = data.items[0];
   return (
-    <section className=" bg-blu mt-[74px] ">
+    <section className="bg-lbluee">
       <Container>
-        <div className="min-w-[220px] md:max-w-[600px]  mx-auto flex items-center justify-items-center">
-          <div className=" ">
-            {/* <h1 className="sm:text-2xl text-center md:text-6xl 	font-normal mt-[100px]	md:mt-32 text-bluee ">
-              <span className=""> Ready to</span>
-              <span className="font-bold"> Get the app</span>
-            </h1>
-            <p className=" text-greyy wrap text-center text-base pt-8 leading-8 font-normal">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-              tempore ad, nesciunt numquam deleniti voluptates tempora
-            </p> */}
+        <div className="min-w-[220px] md:max-w-[600px]  mx-auto flex items-center justify-center">
+          <div className={`mt-[50px] md:mt-[108px] ${styles.getApp}`}>
             <RichTextRenderer json={appDescription.json} />
 
-            <div className="mt-10 md:mb-[103px] mb-[83px] flex items-center md:justify-center flex-col md:flex-row">
-              {/* <button>
-                <img src={"/assets/getapp/Apple.svg"}  />
-              </button>
-              <button className="md:ml-[30px]">
-                <img className="mb-[10px]" src={"/assets/getapp/Googleplay.png"} />
-              </button> */}
+            <div
+              className={`mt-10 md:mb-[63pxpx] mb-[83px] flex items-center md:justify-center flex-col md:flex-row ${styles.image}`}
+            >
               {appSocialsCollection.items.map(
                 ({ socialLink, socialsImage }: iconsType) => (
                   <a href={socialLink.url} target="_blank">
-                    <button>
+                    <div className="md:ml-[30px]">
                       <img src={socialsImage.url} alt={socialsImage.title} />
-                    </button>
+                    </div>
                   </a>
                 )
               )}

@@ -13,17 +13,14 @@ const ServicesButton = ({ data, sendContent, heading }: any) => {
     <section className={"mt-[0px] mb-[115px]"}>
       <Container>
         <div className="hidden md:block">
-          <div className="text-bluee  ">
-            {/* <h1 className=" w-full text-2xl  md:text-5xl font-bold text-center py-24 ">
-              We've more services
-            </h1> */}
+          <div className={`text-bluee py-24 ${styles.heading} `}>
             <RichTextRenderer json={heading.json} />
           </div>
           <div className=" max-w-[940px] mx-auto grid grid-cols-4 gap-3">
             {items.map(({ title, contentImage }: any, key: number) => (
               <div
                 key={key}
-                className="flex flex-col text-center items-center  "
+                className={`flex flex-col text-center items-center ${styles.serviceCard}`}
                 onClick={() => sendContent(title)}
               >
                 <img
@@ -37,7 +34,7 @@ const ServicesButton = ({ data, sendContent, heading }: any) => {
           </div>
         </div>
 
-        {/* <div className="md:hidden block">
+        <div className="md:hidden block">
           <div className="text-bluee  ">
             <h1 className=" w-full text-2xl  md:text-5xl font-bold text-center py-24 ">
               We've more services
@@ -61,18 +58,30 @@ const ServicesButton = ({ data, sendContent, heading }: any) => {
             slidesPerView={1.2}
             onSwiper={(swiper) => console.log(swiper)}
           >
-            {content.map(({ title, image, alt }) => (
+            {items.map(({ title, contentImage }: any, key: number) => (
               <SwiperSlide className={styles.slideCon}>
                 <div
                   className={"flex flex-col items-center " + styles.mqservices}
                 >
-                  <img src={image} alt={alt} className="w-1/2 " />
-                  <p className="text-center text-lg text-greyy mt-4">{title}</p>
+                  <div
+                    key={key}
+                    className="flex flex-col text-center items-center  "
+                    onClick={() => sendContent(title)}
+                  >
+                    <img
+                      src={contentImage.url}
+                      alt={contentImage.title}
+                      className="w-1/2 "
+                    />
+                    <p className="text-center text-lg text-greyy mt-4">
+                      {title}
+                    </p>
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-        </div> */}
+        </div>
       </Container>
     </section>
   );

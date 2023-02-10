@@ -21,7 +21,6 @@ interface iconsType {
 }
 
 const HeroBanner = ({ data }: any) => {
-
   const { heroDescription, heroImage, heroSocialsCollection } = data?.items[0];
   return (
     <section id="ourapp">
@@ -39,17 +38,17 @@ const HeroBanner = ({ data }: any) => {
           <div className="max-w-[481px] mx-auto md:ml-0   ">
             <div
               className={
-                "md:hidden absolute top-0 left-0 right-0 translate-y-[-100px]  z-[-1]  h-[58vh] "
+                "md:hidden absolute top-0 left-0 right-0 translate-y-[-100px]  z-[-1] min-h-[600px] "
               }
             >
-              <img className="h-full w-full" src={"/assets/fill4mq.png"} />
+              <img
+                className=" w-full h-full"
+                style={{ height: "600px" }}
+                src={"/assets/fill4mq.png"}
+              />
             </div>
-            {/* <h1 className="text-2xl md:text-6xl text-center md:text-left	font-normal	md:mt-32  ">
-              <span className="text-white	">The smarter way</span>
-              <br></br>
-              <span className=" text-white	 font-bold">to order your food</span>
-            </h1> */}
-            <div className="">
+
+            <div className={` md:mt-32  ${styles.banner}`}>
               <RichTextRenderer json={heroDescription.json} />
             </div>
 

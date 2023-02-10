@@ -1,21 +1,14 @@
 import React, { useRef, useState } from "react";
 import Container from "../../common/Container";
 import RichTextRenderer from "../RichTextRenderer";
+import styles from "./index.module.scss";
 
 interface AccordionProps {
   title: React.ReactNode;
-  // contentTitle: React.ReactNode;
-  // content: React.ReactNode;
   jsondata: any;
 }
 
-const Accordion: React.FC<AccordionProps> = ({
-  // title,
-  // contentTitle,
-  // content,
-  title,
-  jsondata,
-}) => {
+const Accordion: React.FC<AccordionProps> = ({ title, jsondata }) => {
   const [active, setActive] = useState(false);
   const [height, setHeight] = useState("0px");
 
@@ -47,16 +40,9 @@ const Accordion: React.FC<AccordionProps> = ({
           style={{ maxHeight: `${height}` }}
           className="overflow-hidden transition-max-height duration-700 ease-in-out"
         >
-          <div className="w-full m-3 mx-auto  border-bluee border-2 rounded-xl overflow-hidden		">
-            {/* <p
-              className="w-full pl-[41px] text-bluee font-semibold	pt-[20px]
-  wrap  text-base  leading-8 "
-            >
-              {contentTitle}
-            </p>
-              <p className="pl-[41px] pr-[60px] text-greyy wrap pt-[12px] pb-[28px] text-base  leading-8 ">
-                {content}
-              </p> */}
+          <div
+            className={`w-full m-3 mx-auto  border-bluee border-2 rounded-xl overflow-hidden ${styles.accordion}`}
+          >
             <RichTextRenderer json={jsondata.json} />
           </div>
         </div>
