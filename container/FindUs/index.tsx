@@ -2,12 +2,11 @@ import React from "react";
 import Button from "../../components/common/Button";
 import Input from "../../components/common/Input";
 import Container from "../../components/common/Container";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 import RichTextRenderer from "../../components/common/RichTextRenderer";
 
-const FindUs = ({data}:any) => {
-  console.log("find",data)
-  const {findUsImage,title}=data.items[0]
+const FindUs = ({ data }: any) => {
+  const { findUsImage, title } = data.items[0];
   return (
     <section id="aboutus" className="relative">
       <div className={styles.bg1}>
@@ -24,9 +23,7 @@ const FindUs = ({data}:any) => {
                 <span className="">Find us in these</span>
                 <span className="font-bold"> Area</span>
               </h1> */}
-              <RichTextRenderer
-              json={title.json}
-              />
+              <RichTextRenderer json={title.json} />
               <div className="mt-10 flex gap-5 ">
                 <div className=" text-base ">
                   <Input
@@ -50,7 +47,11 @@ const FindUs = ({data}:any) => {
           </div>
           <div className="  relative flex flex-col justify-end">
             <div className="mx-auto md:ml-[20px] findus ">
-              <img className="md:pl-[30px]" src={findUsImage.url} alt={findUsImage.title} />
+              <img
+                className="md:pl-[30px]"
+                src={findUsImage.url}
+                alt={findUsImage.title}
+              />
             </div>
           </div>
         </div>

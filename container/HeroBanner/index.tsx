@@ -8,7 +8,7 @@ import Container from "../../components/common/Container";
 import RichTextRenderer from "../../components/common/RichTextRenderer";
 
 // Styles
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 interface iconsType {
   socialLink: {
@@ -21,7 +21,7 @@ interface iconsType {
 }
 
 const HeroBanner = ({ data }: any) => {
-  console.log("herobanner", data);
+
   const { heroDescription, heroImage, heroSocialsCollection } = data?.items[0];
   return (
     <section id="ourapp">

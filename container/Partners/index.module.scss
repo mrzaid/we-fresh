@@ -1,0 +1,39 @@
+.bgimg {
+  position: absolute;
+  z-index: -9;
+  top: 60px;
+  left: -25%;
+  
+  min-width: 540px;
+  height: 400px;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.partnerImgs div span {
+  width: 175px !important;
+  height: 175px !important;
+}
+
+
+@media screen and (max-width: 843px) {
+  .bgimg {
+  left: -25%;}
+}
+@media screen and (max-width: 767px) {
+  .partnerImgs div span {
+    width: 115px !important;
+    height: 115px !important;
+  }
+  .bgimg {
+   
+    top: 60px;
+    left: 0;
+    object-fit: contain;
+  }
+}

@@ -1,10 +1,10 @@
 import React from "react";
 import Container from "../../components/common/Container";
 import RichTextRenderer from "../../components/common/RichTextRenderer";
-import styles from "./index.module.css";
+// Styles
+import styles from "./index.module.scss";
 
 export const Partners = ({ data }: any) => {
-  console.log("partners", data);
   const { partnerImagesCollection, partnersContent } = data.items[0];
 
   return (

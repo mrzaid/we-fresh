@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Container from "../../../components/common/Container";
 import RichTextRenderer from "../../../components/common/RichTextRenderer";
-import styles from "./index.module.css";
+// Styles
+import styles from "./index.module.scss";
 export const Freshmart = ({ data }: any) => {
   const { contentDescriptionCollection } = data;
   return (

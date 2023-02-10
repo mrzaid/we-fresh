@@ -1,0 +1,28 @@
+@media screen and (max-width: 1000px) {
+  .mq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content {
+    align-items: center;
+  }
+}
+.servicesContent h2 {
+  color: "#68BAE3";
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  padding-top: 32px;
+}
+.servicesContent p {
+  color: "#868E95";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.bg div:nth-child(2) {
+  background-color: #ebf7fc;
+}

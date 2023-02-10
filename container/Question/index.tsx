@@ -3,10 +3,10 @@ import ContactBox from "../../components/common/ContactBox";
 import Container from "../../components/common/Container";
 import Accordion from "../../components/common/Accordion";
 import RichTextRenderer from "../../components/common/RichTextRenderer";
-import styles from "./index.module.css";
+// Styles
+import styles from "./index.module.scss";
 
 const Question = ({ data }: any) => {
-  console.log("question", data);
   const {
     enquiry,
     heading,

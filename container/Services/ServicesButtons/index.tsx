@@ -1,37 +1,14 @@
 import React from "react";
 import Container from "../../../components/common/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "./index.module.css";
+// Styles
+import styles from "./index.module.scss";
 import RichTextRenderer from "../../../components/common/RichTextRenderer";
 
 import "swiper/css";
 
 const ServicesButton = ({ data, sendContent, heading }: any) => {
-  console.log("servicez", data);
   const { items } = data;
-  //   const content = [
-  //     {
-  //       title: "Store",
-  //       image: "/assets/Store.svg",
-  //       alt: "store-img",
-  //     },
-  //     {
-  //       title: "Grocery",
-  //       image: "/assets/Grocery.svg",
-  //       alt: "grocery-img",
-  //     },
-  //     {
-  //       title: "Cafe",
-  //       image: "/assets/Cafe.svg",
-  //       alt: "cafe-img",
-  //     },
-  //     {
-  //       title: "Food",
-  //       image: "/assets/Food.png",
-  //       alt: "food-img",
-  //     },
-  //   ];
-
   return (
     <section className={"mt-[0px] mb-[115px]"}>
       <Container>

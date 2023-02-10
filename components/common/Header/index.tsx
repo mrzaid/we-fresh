@@ -3,26 +3,7 @@ import Link from "next/link";
 import Container from "../../common/Container";
 
 const Header = ({ headerdata }: any) => {
-  console.log("headerdata", headerdata);
   const { headerLogo, headerLinksCollection } = headerdata.items[0];
-  // const mymenu = [
-  //   {
-  //     title: "Our App",
-  //     id: "ourapp",
-  //   },
-  //   {
-  //     title: "For Business",
-  //     id: "forbusiness",
-  //   },
-  //   {
-  //     title: "About Us",
-  //     id: "aboutus",
-  //   },
-  //   {
-  //     title: "English",
-  //     id: "english",
-  //   },
-  // ];
   const [open, setOpen] = useState<Boolean>(false);
 
   return (

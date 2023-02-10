@@ -13,7 +13,6 @@ interface iconsType {
 }
 
 const GetApp = ({ data }: any) => {
-  console.log("getapp", data);
   const { appDescription, appSocialsCollection } = data.items[0];
   return (
     <section className=" bg-blu mt-[74px] ">
