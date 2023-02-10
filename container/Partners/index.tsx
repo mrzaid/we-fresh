@@ -1,23 +1,19 @@
 import React from "react";
 import Container from "../../components/common/Container";
 import RichTextRenderer from "../../components/common/RichTextRenderer";
-
-
-
 import styles from "./index.module.css";
 
-export const Partners = ({data}:any) => {
-  console.log('partners',data)
-  const {partnerImagesCollection,partnersContent}=data.items[0]
-
+export const Partners = ({ data }: any) => {
+  console.log("partners", data);
+  const { partnerImagesCollection, partnersContent } = data.items[0];
 
   return (
     <section className="mt-[150px] md:mb-[100px] relative">
-      <div
-        className={
-          "md:hidden absolute  right-0 left-0 h-[50vh]  z-[-1]  "}
-      >
-        <img className="h-full w-full " src={"/assets/partners/partnersmq.svg"} />
+      <div className={"md:hidden absolute  right-0 left-0 h-[50vh]  z-[-1]  "}>
+        <img
+          className="h-full w-full "
+          src={"/assets/partners/partnersmq.svg"}
+        />
       </div>
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 mx-auto md:m-0 gap-[50px] ">
@@ -27,15 +23,12 @@ export const Partners = ({data}:any) => {
               <span className=" text-bluee	 font-bold">Partners</span>
             </h1>
             <div className=" min-w-[220px] max-w-[400px] text-center md:text-left  mt-10  md:w-80 mx-auto md:ml-0">
-              
               {/* <p className="text-greyy font-normal text-xl   ">
                 Lorem ipsum dolor sit, amet tene consectetur adipisisdsadcing
                 elit. Vero, tenetur assumenda reiciendis esse aasdas dasd fdasf
                 ccusamus, culpa alias eum non deleniti
               </p> */}
-              <RichTextRenderer
-              json={partnersContent.json}
-              />
+              <RichTextRenderer json={partnersContent.json} />
             </div>
             <div
               className={
@@ -47,14 +40,9 @@ export const Partners = ({data}:any) => {
           </div>
 
           <div className="md:justify-end md:relative md:right-0  sm:justify-center sm:right-0 pt-[50px]  relative mb-[100px]">
-            <div className={"h-[350px] relative w-[600px]" + styles.partnerImgs}>
-           {/*  <div
-                className={value.title==="7-Eleven" ? " bg2 absolute sm:top-[85px]  sm:right-0  top-[125px] right-0 w-full max-w-[91px] sm:max-w-[175px] "
-              : 
-              
-              }
-              > */}
-              
+            <div
+              className={"h-[350px] relative w-[600px]" + styles.partnerImgs}
+            >
               <div
                 className="bg1  absolute sm:top-0 sm:left-[-15px] top-[100px]
               w-full max-w-[91px] sm:max-w-[175px]"

@@ -23,7 +23,6 @@ interface iconsType {
 const HeroBanner = ({ data }: any) => {
   console.log("herobanner", data);
   const { heroDescription, heroImage, heroSocialsCollection } = data?.items[0];
-  // const {socialLink,socialsImage} =heroSocialCollection?.items[0]
   return (
     <section id="ourapp">
       <div className={styles.herobannerImg1}>
@@ -77,8 +76,6 @@ const HeroBanner = ({ data }: any) => {
               Available on
             </p>
             <div className="  mt-6 flex justify-center md:justify-start gap-5 mb-[100px]">
-              <button>{/* <img src={"/assets/Apple.png"} /> */}</button>
-              <button>{/* <img src={"/assets/Googleplay.png"} /> */}</button>
               {heroSocialsCollection.items.map(
                 ({ socialLink, socialsImage }: iconsType) => (
                   <a href={socialLink.url} target="_blank">
