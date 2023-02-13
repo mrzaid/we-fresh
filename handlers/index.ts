@@ -1,17 +1,14 @@
 import Paths from "../config/path";
 export const fetchContent = async (query: string) => {
   try {
-    const res = await fetch(
-      "https://graphql.contentful.com/content/v1/spaces/fr6kcovl026y/",
-      {
-        method: "POST",
-        body: JSON.stringify({ query: query }),
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer iNlQ1MMJfxj99iiuwVMO9Rz1Uoies5hKeTPFI5rHLQY`,
-        },
-      }
-    );
+    const res = await fetch(Paths.CONTENTFUL_URI, {
+      method: "POST",
+      body: JSON.stringify({ query: query }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+      },
+    });
 
     const fetchedContent = await res.json();
 
