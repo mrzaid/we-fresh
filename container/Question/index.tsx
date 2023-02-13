@@ -14,7 +14,7 @@ const Question = ({ data }: any) => {
     enquiryContentsCollection,
   } = data.items[0];
   return (
-    <section id="english" className="md:mt-[250px]">
+    <section id="english" className="md:mt-[250px] md: mb-[108px]">
       <Container>
         <div className={`text-bluee mb-[44px] ${styles.question}`}>
           <RichTextRenderer json={heading.json} />

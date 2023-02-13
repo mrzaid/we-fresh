@@ -4,7 +4,7 @@ import "../styles/header.scss";
 import "../styles/global.scss";
 
 function MyApp({ Component, pageProps }: any) {
-  const { websiteDetails } = pageProps;
+  const websiteDetails = pageProps?.websiteDetails;
   return (
     <Layout data={websiteDetails}>
       <Component {...pageProps} />

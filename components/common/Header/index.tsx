@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Link from "next/link";
 import Container from "../../common/Container";
 
 const Header = ({ headerdata }: any) => {
-  const { headerLogo, headerLinksCollection } = headerdata.items[0];
+  const headerLogo = headerdata?.items[0]?.headerLogo;
+  const headerLinksCollection = headerdata?.items[0]?.headerLinksCollection;
   const [open, setOpen] = useState<Boolean>(false);
 
   return (
@@ -22,7 +22,7 @@ const Header = ({ headerdata }: any) => {
       <Container>
         <div className="h-24 bg-none md:flex justify-between items-center py-4 ">
           <div className="flex z-[3] justify-items-start	  ">
-            <img src={headerLogo.url} alt={headerLogo.title}></img>
+            <img src={headerLogo?.url} alt={headerLogo?.title}></img>
           </div>
           <div
             onClick={() => setOpen(!open)}

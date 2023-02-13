@@ -12,16 +12,16 @@ interface iconsType {
 }
 
 const Footer = ({ footerdata }: any) => {
-  const { footerSocialsCollection, footerLogo, footerLinksCollection } =
-    footerdata?.items[0];
-
+  const footerSocialsCollection = footerdata?.items[0]?.footerSocialsCollection;
+  const footerLogo = footerdata?.items[0]?.footerLogo;
+  const footerLinksCollection = footerdata?.items[0]?.footerLinksCollection;
   return (
     <section className=" bg-blu py-[92px]">
       <Container>
         <footer className="grid sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 3xl:grid-cols-5 gap-4">
           <div className="px-[20px]">
             <a href="#" className="">
-              <img alt={footerLogo.title} src={footerLogo.url} />
+              <img alt={footerLogo?.title} src={footerLogo?.url} />
             </a>
           </div>
           {footerLinksCollection?.items?.map(
@@ -29,7 +29,7 @@ const Footer = ({ footerdata }: any) => {
               <nav className="px-[20px]">
                 <p className="font-bold ">{title}</p>
                 <ul className="  py-[15px]">
-                  {footerLinksCollection?.items.map(({ text, url }: any) => (
+                  {footerLinksCollection?.items?.map(({ text, url }: any) => (
                     <li className="py-[5px]">
                       <a className="text-greyy" href={url} target="_blank">
                         {text}
@@ -44,11 +44,11 @@ const Footer = ({ footerdata }: any) => {
           <nav className="mx-auto">
             <p className="text-greyy ">Available on</p>
             <div className="mt-6 flex gap-5 mb-[60px]">
-              {footerSocialsCollection.items.map(
+              {footerSocialsCollection?.items?.map(
                 ({ socialLink, socialsImage }: iconsType) => (
-                  <a href={socialLink.url} target="_blank">
+                  <a href={socialLink?.url} target="_blank">
                     <button>
-                      <img src={socialsImage.url} alt={socialsImage.title} />
+                      <img src={socialsImage?.url} alt={socialsImage?.title} />
                     </button>
                   </a>
                 )
