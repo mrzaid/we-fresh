@@ -21,7 +21,7 @@ const WeFresh = ({ data }: any) => {
             <div className="min-w-[210px] mt-10 flex md:gap-5 gap-2 justify-center ">
               <div className=" text-base ">
                 <Input
-                  className=" h-8 p-4 w-[170px] md:w-[300px] rounded  border-sgrey border-2"
+                  className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none border-sgrey border-2"
                   placeholder="Enter phone number"
                   type="text"
                   id="1"

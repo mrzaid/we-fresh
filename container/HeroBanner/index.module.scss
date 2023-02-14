@@ -70,6 +70,8 @@
   .herobannerImg3 {
     transform: translateX(-20%);
   }
+  .erobannerImg4 {
+  }
 }
 @media screen and (max-width: 1000px) {
   .herobannerImg2 {
@@ -104,6 +106,44 @@
       text-align: center;
       color: var(--white);
       line-height: 33px;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .herobannerImg1 {
+    width: 53vw;
+    max-height: 1000px;
+    img {
+      width: 100%;
+    }
+  }
+  .herobannerImg5 {
+    width: 15vw;
+    img {
+      width: 100%;
+    }
+  }
+  .herobannerImg2 {
+    width: 50vw;
+    img {
+      width: 100%;
+    }
+  }
+  .herobgYellow {
+    width: 22vw;
+    max-width: 460px;
+    max-height: 400px;
+    img {
+      width: 100%;
+    }
+  }
+  .herobannerImg4 {
+    width: 30vw;
+    max-height: 440px;
+    max-width: 580px;
+    img {
+      width: 100%;
     }
   }
 }

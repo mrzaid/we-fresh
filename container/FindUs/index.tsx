@@ -23,7 +23,7 @@ const FindUs = ({ data }: any) => {
               <div className="mt-10 flex gap-5 ">
                 <div className=" text-base ">
                   <Input
-                    className=" h-8 p-4 w-[170px] md:w-[300px] rounded  border-sgrey border-2	"
+                    className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none border-sgrey border-2	"
                     placeholder="Enter your area"
                     type="text"
                     id="1"

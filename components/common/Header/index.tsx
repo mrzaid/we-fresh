@@ -8,7 +8,7 @@ const Header = ({ headerdata }: any) => {
 
   return (
     <header
-      className={"bg-transparent  top-0 py-8 z-10"}
+      className={"bg-transparent  top-0 z-10"}
       style={
         open
           ? {
@@ -20,13 +20,13 @@ const Header = ({ headerdata }: any) => {
       }
     >
       <Container>
-        <div className="h-24 bg-none md:flex justify-between items-center py-4 ">
+        <div className="h-24 bg-none md:flex justify-between items-center py-[24px]  ">
           <div className="flex z-[3] justify-items-start	  ">
             <img src={headerLogo?.url} alt={headerLogo?.title}></img>
           </div>
           <div
             onClick={() => setOpen(!open)}
-            className="z-[2] text-3xl absolute right-8 top-[25px] py-[40px] cursor-pointer md:hidden w-[15px] h-[12px]"
+            className="z-[2] text-3xl absolute right-8  top-[38px] cursor-pointer md:hidden w-[15px] h-[12px]"
           >
             {open ? (
               <img

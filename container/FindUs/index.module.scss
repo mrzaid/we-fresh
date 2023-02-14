@@ -87,3 +87,11 @@
     transform: translateY(-70%);
   }
 }
+@media screen and (min-width: 1440px) {
+  .b1 {
+    width: 35vw;
+    img {
+      width: 100%;
+    }
+  }
+}
