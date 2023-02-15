@@ -34,7 +34,7 @@ const HeroBanner = ({ data }: any) => {
         <img src={"/assets/hero/Fill3.png"} alt="bannerBgImg5" />
       </div>
       <Container>
-        <div className=" main flex flex-col md:flex-row ">
+        <div className=" main flex flex-col md:flex-row mt-[100px] ">
           <div className="max-w-[481px] mx-auto md:ml-0   ">
             <div
               className={

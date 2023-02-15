@@ -10,18 +10,7 @@ const Header = ({ headerdata }: any) => {
   const [open, setOpen] = useState<Boolean>(false);
 
   return (
-    <header
-      className={"bg-transparent  top-0 z-10"}
-      style={
-        open
-          ? {
-              backgroundColor: "#68BAE3",
-              height: "100vh",
-              transition: "0.3s all",
-            }
-          : { backgroundColor: "transparent" }
-      }
-    >
+    <header className={"bg-transparent fixed w-screen   top-0 z-10"}>
       <Container>
         <div className="h-24 bg-none md:flex justify-between items-center py-[24px]  ">
           <div className="flex z-[3] justify-items-start	  ">
@@ -33,21 +22,21 @@ const Header = ({ headerdata }: any) => {
           >
             {open ? (
               <button onClick={() => setOpen}>
-                <MenuIcon />
+                <CloseIcon />
               </button>
             ) : (
               <button onClick={() => setOpen}>
-                <CloseIcon />
+                <MenuIcon />
               </button>
             )}
           </div>
 
           <ul
             className={`${styles.headernav} gap-14  flex flex-col md:flex-row
-                 md:pb-0  absolute
+                 md:pb-0  absolute  h-screen md:h-0 bg-bluee md:bg-transparent
                  md:static md:z-auto z-[1] left-0 w-full md:w-auto 
-                 md:pl-0 pl-6 pr-6 transition-all duration-500 ease-in ${
-                   open ? "top-0 " : "top-[-580px] "
+                 md:pl-0 pl-6 pr-6 transition-all duration-500 ease-in top-0 ${
+                   open ? " " : " -translate-y-full"
                  } `}
           >
             {headerLinksCollection?.items?.map(({ text, url }: any) => (
