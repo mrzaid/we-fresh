@@ -1,29 +1,2 @@
 
- @media screen and (max-width: 767px) {
-
-      .header-nav-container{
-        padding-top: 130px;
-      
-      }
-   
-        li{
-            padding-bottom:14px;
-            border-bottom: 1px solid white;
-            
-         
-        }
-        li:first-child {
-          padding-top:14px;
-          border-top: 1px solid white
-        }
-        li:nth-child(4) {
-          margin-bottom: 20px !important;
-          border-bottom: 1px solid white
-        }
-        li:last-child {
-          padding: 0;
-          border: none;
-          display: block;
-        }
-    }
  

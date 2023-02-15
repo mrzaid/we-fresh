@@ -1,0 +1,43 @@
+.hoverunderline {
+  display: inline-block;
+  position: relative;
+}
+.hoverunderline:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hoverunderline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+@media screen and (max-width: 767px) {
+  .headernav {
+    padding-top: 130px;
+    li {
+      padding-bottom: 14px;
+      border-bottom: 1px solid white;
+    }
+    li:first-child {
+      padding-top: 14px;
+      border-top: 1px solid white;
+    }
+    li:nth-child(4) {
+      margin-bottom: 20px !important;
+      border-bottom: 1px solid white;
+    }
+    li:last-child {
+      padding: 0;
+      border: none;
+      display: block;
+    }
+  }
+}

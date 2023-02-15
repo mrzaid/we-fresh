@@ -12,7 +12,7 @@ export const Freshmart = ({ data }: any) => {
           <div className={" flex  gap-8 " + styles.mq}>
             <div
               className={
-                "max-w-[290px]  flex items-center justify-center relative"
+                "max-w-[320px]  flex items-center justify-center relative"
               }
             >
               <img src={"assets/iPhone_Black.svg"} alt="image of a" />

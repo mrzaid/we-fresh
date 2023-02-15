@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Container from "../../common/Container";
+import styles from "./index.module.scss";
+import MenuIcon from "../Icons/menu";
+import CloseIcon from "../Icons/close";
 
 const Header = ({ headerdata }: any) => {
   const headerLogo = headerdata?.items[0]?.headerLogo;
@@ -26,27 +29,21 @@ const Header = ({ headerdata }: any) => {
           </div>
           <div
             onClick={() => setOpen(!open)}
-            className="z-[2] text-3xl absolute right-8  top-[38px] cursor-pointer md:hidden w-[15px] h-[12px]"
+            className="z-[2] text-3xl absolute right-8  top-[22px] cursor-pointer md:hidden w-[15px] h-[12px]"
           >
             {open ? (
-              <img
-                className="md:hidden z-[3] "
-                src="/assets/Close.svg"
-                alt="navbar icon"
-                onClick={() => setOpen}
-              />
+              <button onClick={() => setOpen}>
+                <MenuIcon />
+              </button>
             ) : (
-              <img
-                className=" md:hidden z-[3] "
-                src="/assets/menu.svg"
-                alt="navbar icon"
-                onClick={() => setOpen}
-              />
+              <button onClick={() => setOpen}>
+                <CloseIcon />
+              </button>
             )}
           </div>
 
           <ul
-            className={`header-nav-container gap-14  flex flex-col md:flex-row
+            className={`${styles.headernav} gap-14  flex flex-col md:flex-row
                  md:pb-0  absolute
                  md:static md:z-auto z-[1] left-0 w-full md:w-auto 
                  md:pl-0 pl-6 pr-6 transition-all duration-500 ease-in ${
@@ -55,7 +52,11 @@ const Header = ({ headerdata }: any) => {
           >
             {headerLinksCollection?.items?.map(({ text, url }: any) => (
               <li className="li  text-white md:text-black border-blue-100">
-                <a href={url} target={"_blank"}>
+                <a
+                  className={`${styles.hoverunderline}`}
+                  href={url}
+                  target={"_blank"}
+                >
                   {text}
                 </a>
               </li>

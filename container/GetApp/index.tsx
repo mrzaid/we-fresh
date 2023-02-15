@@ -25,12 +25,12 @@ const GetApp = ({ data }: any) => {
             <RichTextRenderer json={appDescription.json} />
 
             <div
-              className={`mt-10 md:mb-[63pxpx] mb-[83px] flex items-center md:justify-center flex-col md:flex-row ${styles.image}`}
+              className={`mt-10 md:mb-[63pxpx] mb-[83px] flex items-center md:justify-evenly flex-col md:flex-row ${styles.image}`}
             >
               {appSocialsCollection.items.map(
                 ({ socialLink, socialsImage }: iconsType) => (
                   <a href={socialLink.url} target="_blank">
-                    <div className="md:ml-[30px]">
+                    <div className="">
                       <img src={socialsImage.url} alt={socialsImage.title} />
                     </div>
                   </a>

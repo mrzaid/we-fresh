@@ -87,7 +87,7 @@ const HeroBanner = ({ data }: any) => {
             </div>
 
             <div
-              className={` hidden md:block md: relative md:bottom-[300px] md:right-0 md:w-4.5/12 md:z-[-2] ${styles.herobannerImg4} `}
+              className={` md:relative md:bottom-[300px] md:right-0 md:w-4.5/12 md:z-[-2] ${styles.herobannerImg4} `}
             >
               <img className={"absolute"} src={"/assets/hero/Fill5.png"} />
             </div>
@@ -101,7 +101,9 @@ const HeroBanner = ({ data }: any) => {
                 alt="bg-yellow"
               />
             </div>
-            <div className={"right-0" + styles.herobannerImg}>
+            <div
+              className={`right-0 md:pt-0 pt-[40px] ${styles.herobannerImg}`}
+            >
               <img src={heroImage.url} alt={heroImage.title} />
             </div>
           </div>
