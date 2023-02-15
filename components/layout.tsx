@@ -10,7 +10,17 @@ function Layout({ children, data }: any) {
     <div className="layout">
       <Head>
         <title>WeFresh</title>
-        <link href="../public/assets/logo.png" />
+        <link href="/assets/headlogo.png" rel="icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <header>
         <Header headerdata={headerdata} />

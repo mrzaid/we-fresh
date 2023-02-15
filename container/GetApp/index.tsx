@@ -30,7 +30,7 @@ const GetApp = ({ data }: any) => {
               {appSocialsCollection.items.map(
                 ({ socialLink, socialsImage }: iconsType) => (
                   <a href={socialLink.url} target="_blank">
-                    <div className="">
+                    <div className="md:pt-0 pt-[17px] hover:shadow-2xl">
                       <img src={socialsImage.url} alt={socialsImage.title} />
                     </div>
                   </a>

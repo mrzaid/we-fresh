@@ -28,6 +28,7 @@ const ServicesButton = ({ data, sendContent, heading }: any) => {
                   alt={contentImage.title}
                   className="w-1/2 "
                 />
+
                 <p className="text-center text-lg text-greyy mt-4">{title}</p>
               </div>
             ))}
@@ -61,18 +62,22 @@ const ServicesButton = ({ data, sendContent, heading }: any) => {
             {items.map(({ title, contentImage }: any, key: number) => (
               <SwiperSlide className={styles.slideCon}>
                 <div
-                  className={"flex flex-col items-center " + styles.mqservices}
+                  className={
+                    "flex flex-col items-center h-[230px]  " + styles.mqservices
+                  }
                 >
                   <div
                     key={key}
                     className="flex flex-col text-center items-center  "
                     onClick={() => sendContent(title)}
                   >
-                    <img
-                      src={contentImage.url}
-                      alt={contentImage.title}
-                      className="w-1/2 "
-                    />
+                    <div className="max-h-[120px] max-w-[120px]">
+                      <img
+                        src={contentImage.url}
+                        alt={contentImage.title}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                     <p className="text-center text-lg text-greyy mt-4">
                       {title}
                     </p>
