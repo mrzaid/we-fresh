@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from "../../common/Container";
 import styles from "./index.module.scss";
 import { MenuIcon } from "../../common/icon";
@@ -8,6 +8,16 @@ const Header = ({ headerdata }: any) => {
   const headerLogo = headerdata?.items[0]?.headerLogo;
   const headerLinksCollection = headerdata?.items[0]?.headerLinksCollection;
   const [open, setOpen] = useState<Boolean>(false);
+
+  useEffect(() => {
+    if (open) {
+      window.document.body.style.height = "100vh";
+      window.document.body.style.overflow = "hidden";
+    } else {
+      window.document.body.style.height = "fit-content";
+      window.document.body.style.overflow = "auto";
+    }
+  }, [open]);
 
   return (
     <header
