@@ -35,7 +35,7 @@ const HeroBanner = ({ data }: any) => {
       </div>
       <Container>
         <div className=" main flex flex-col md:flex-row  ">
-          <div className="max-w-[481px] mx-auto md:ml-0   ">
+          <div className="max-w-[320px] mx-auto md:ml-0   ">
             <div
               className={
                 "md:hidden absolute top-0 left-0 right-0 translate-y-[-100px]  z-[-1] min-h-[600px] "
