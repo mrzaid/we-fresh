@@ -21,7 +21,7 @@ const Header = ({ headerdata }: any) => {
 
   return (
     <header
-      className={`bg-transparent  w-screen top-0 z-10  `}
+      className={`bg-transparent top-0 z-10  `}
       style={
         open
           ? {

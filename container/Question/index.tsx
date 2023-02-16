@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ContactBox from "../../components/common/ContactBox";
 import Container from "../../components/common/Container";
 import Accordion from "../../components/common/Accordion";
@@ -13,6 +13,11 @@ const Question = ({ data }: any) => {
     questionsAccordionCollection,
     enquiryContentsCollection,
   } = data.items[0];
+
+  const [active, setActive] = useState("");
+  const handleActive = (id: string) => {
+    setActive(id);
+  };
   return (
     <section id="english" className="md:mt-[250px] md: mb-[108px]">
       <Container>
@@ -21,8 +26,14 @@ const Question = ({ data }: any) => {
         </div>
         <div>
           {questionsAccordionCollection.items.map(
-            ({ title, accordionDescription }: any) => (
-              <Accordion title={title} jsondata={accordionDescription} />
+            ({ title, accordionDescription }: any, key: number) => (
+              <Accordion
+                handleActive={(id) => handleActive(id)}
+                active={active}
+                id={`${key}`}
+                title={title}
+                jsondata={accordionDescription}
+              />
             )
           )}
         </div>

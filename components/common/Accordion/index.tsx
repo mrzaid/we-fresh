@@ -8,26 +8,37 @@ import { Minus } from "../../common/icon";
 interface AccordionProps {
   title: React.ReactNode;
   jsondata: any;
+  active: string;
+  handleActive: (id: string) => void;
+  id: string;
 }
 
-const Accordion: React.FC<AccordionProps> = ({ title, jsondata }) => {
-  const [active, setActive] = useState(false);
+const Accordion: React.FC<AccordionProps> = ({
+  title,
+  jsondata,
+  active,
+  handleActive,
+  id,
+}) => {
   const [height, setHeight] = useState("0px");
 
   const contentSpace = useRef<HTMLDivElement>(null);
 
   function toggleAccordion() {
-    setActive(!active);
+    if (active === id) {
+      handleActive("");
+    } else {
+      handleActive(id);
+    }
   }
   useEffect(() => {
-    if (active) {
+    if (active === id) {
       setHeight(`${contentSpace?.current?.scrollHeight}px`);
     } else {
       setHeight("0px");
     }
   }, [active]);
 
-  console.log(active, height);
   return (
     <Container>
       <div className="flex flex-col">
@@ -38,7 +49,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, jsondata }) => {
           >
             <button>
               <i className="w-[80px] h-[40px]">
-                {active ? (
+                {active === id ? (
                   <Minus height={40} width={80} color={"#000"} />
                 ) : (
                   <Plus height={40} width={80} color={"#000"} />
