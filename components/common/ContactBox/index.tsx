@@ -7,7 +7,7 @@ interface ContactBox {
 
 const ContactBox: FC<ContactBox> = ({ jsondata }) => {
   return (
-    <div className=" flex flex-col rounded-lg justify-end p-6 border-2 h-36 ">
+    <div className=" flex flex-col rounded-lg justify-end p-6 border-2 h-[199px] ">
       <div className={`${styles.contactbox}`}>
         <RichTextRenderer json={jsondata.json} />
       </div>
