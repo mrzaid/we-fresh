@@ -87,6 +87,12 @@
   }
 }
 @media screen and (max-width: 767px) {
+  .herocontainer {
+    max-width: 320px;
+  }
+  .inputfield {
+    padding-left: 0px;
+  }
   .herobannerImg1,
   .herobannerImg2,
   .herobannerImg5 {

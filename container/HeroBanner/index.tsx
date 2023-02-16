@@ -35,7 +35,9 @@ const HeroBanner = ({ data }: any) => {
       </div>
       <Container>
         <div className=" main flex flex-col md:flex-row  ">
-          <div className="max-w-[421px] mx-auto md:ml-0   ">
+          <div
+            className={`max-w-[421px] mx-auto md:ml-0 ${styles.herocontainer}`}
+          >
             <div
               className={
                 "md:hidden absolute top-0 left-0 right-0 translate-y-[-100px]  z-[-1] min-h-[600px] "
@@ -53,7 +55,7 @@ const HeroBanner = ({ data }: any) => {
             </div>
 
             <div className="mt-10 flex gap-5 justify-center	">
-              <div className=" text-base pl-[55px] ">
+              <div className={`text-base pl-[55px] ${styles.inputfield} `}>
                 <Input
                   className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none hover:bg-slate-50 focus:border-sky-500  border-sgrey border-2"
                   placeholder="Enter phone number"
