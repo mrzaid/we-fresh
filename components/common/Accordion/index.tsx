@@ -1,7 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Container from "../../common/Container";
 import RichTextRenderer from "../RichTextRenderer";
 import styles from "./index.module.scss";
+import { Plus } from "../../common/icon";
+import { Minus } from "../../common/icon";
 
 interface AccordionProps {
   title: React.ReactNode;
@@ -15,25 +17,39 @@ const Accordion: React.FC<AccordionProps> = ({ title, jsondata }) => {
   const contentSpace = useRef<HTMLDivElement>(null);
 
   function toggleAccordion() {
-    setActive((prevState) => !prevState);
-
-    setHeight(active ? `${contentSpace?.current?.scrollHeight}px` : "0px");
+    setActive(!active);
   }
+  useEffect(() => {
+    if (active) {
+      setHeight(`${contentSpace?.current?.scrollHeight}px`);
+    } else {
+      setHeight("0px");
+    }
+  }, [active]);
 
+  console.log(active, height);
   return (
     <Container>
       <div className="flex flex-col">
         <div className="w-full   ">
-          <button
-            className="w-full  m-3 mx-auto  border-sgrey border-2	rounded-xl cursor-pointer focus:outline-none "
+          <div
+            className="w-full flex items-center m-3 mx-auto  border-sgrey border-2	rounded-xl cursor-pointer focus:outline-none "
             onClick={toggleAccordion}
           >
-            <div>
-              <p className=" text-left pl-[41px] text-black font-semibold	wrap  text-base p-[20px] leading-8 ">
-                {title}
-              </p>
-            </div>
-          </button>
+            <button>
+              <i className="w-[80px] h-[40px]">
+                {active ? (
+                  <Minus height={40} width={80} color={"#000"} />
+                ) : (
+                  <Plus height={40} width={80} color={"#000"} />
+                )}
+              </i>
+            </button>
+
+            <p className=" text-left pl-[21px] text-black font-semibold	wrap  text-base p-[20px] leading-8 ">
+              {title}
+            </p>
+          </div>
         </div>
         <div
           ref={contentSpace}

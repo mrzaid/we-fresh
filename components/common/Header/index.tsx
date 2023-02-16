@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Container from "../../common/Container";
 import styles from "./index.module.scss";
-import MenuIcon from "../Icons/menu";
-import CloseIcon from "../Icons/close";
+import { MenuIcon } from "../../common/icon";
+import { CloseIcon } from "../../common/icon";
 
 const Header = ({ headerdata }: any) => {
   const headerLogo = headerdata?.items[0]?.headerLogo;
@@ -33,11 +33,11 @@ const Header = ({ headerdata }: any) => {
           >
             {open ? (
               <button onClick={() => setOpen}>
-                <CloseIcon />
+                <CloseIcon height={16} width={15} color={"#000"} />
               </button>
             ) : (
               <button onClick={() => setOpen}>
-                <MenuIcon />
+                <MenuIcon height={16} width={15} color={"#000"} />
               </button>
             )}
           </div>
