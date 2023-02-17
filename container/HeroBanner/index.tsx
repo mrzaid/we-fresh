@@ -58,33 +58,18 @@ const HeroBanner = ({ data }: any) => {
             <div className={` md:mt-32  ${styles.banner}`}>
               <RichTextRenderer json={heroDescription.json} />
             </div>
-
             <div className="mt-10 flex gap-5 justify-center	">
               <div className={`text-base pl-[55px] ${styles.inputfield} `}>
-                <form
-                  method="POST"
-                  name="contact v2"
-                  data-netlify="true"
-                  onSubmit={handleSubmit}
-                  data-netlify-honeypot="bot-field"
-                >
-                  <div>
-                    <input type="hidden" name="form-name" value="contact v2" />
-                    <div hidden>
-                      <input name="bot-field" />
-                    </div>
-                    <Input
-                      className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none hover:bg-slate-50 focus:border-sky-500  border-sgrey border-2"
-                      placeholder="Enter phone number"
-                      type="text"
-                      name="phone"
-                      id="1"
-                    />
-                  </div>
-                  <div>
-                    <Button>Send</Button>
-                  </div>
-                </form>
+                <Input
+                  className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none hover:bg-slate-50 focus:border-sky-500  border-sgrey border-2"
+                  placeholder="Enter phone number"
+                  type="text"
+                  name="phone"
+                  id="1"
+                />
+              </div>
+              <div>
+                <Button>Send</Button>
               </div>
             </div>
             <p className="text-center md:text-left text-white mt-8">
