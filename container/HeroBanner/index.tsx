@@ -1,5 +1,5 @@
 //Packages
-import React from "react";
+import React, { useState } from "react";
 
 // Components
 import Button from "../../components/common/Button";
@@ -56,21 +56,32 @@ const HeroBanner = ({ data }: any) => {
 
             <div className="mt-10 flex gap-5 justify-center	">
               <div className={`text-base pl-[55px] ${styles.inputfield} `}>
-                <Input
-                  className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none hover:bg-slate-50 focus:border-sky-500  border-sgrey border-2"
-                  placeholder="Enter phone number"
-                  type="text"
-                  id="1"
-                />
-              </div>
-              <div>
-                <Button
-                  onClick={() =>
-                    console.log("You clicked on the orange button!")
-                  }
+                <form
+                  method="POST"
+                  name="contact v2"
+                  data-netlify="true"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                  }}
+                  data-netlify-honeypot="bot-field"
                 >
-                  Send
-                </Button>
+                  <div>
+                    <input type="hidden" name="form-name" value="contact v2" />
+                    <div hidden>
+                      <input name="bot-field" />
+                    </div>
+                    <Input
+                      className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none hover:bg-slate-50 focus:border-sky-500  border-sgrey border-2"
+                      placeholder="Enter phone number"
+                      type="text"
+                      name="phone"
+                      id="1"
+                    />
+                  </div>
+                  <div>
+                    <Button>Send</Button>
+                  </div>
+                </form>
               </div>
             </div>
             <p className="text-center md:text-left text-white mt-8">
