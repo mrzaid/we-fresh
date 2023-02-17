@@ -22,6 +22,11 @@ interface iconsType {
 
 const HeroBanner = ({ data }: any) => {
   const { heroDescription, heroImage, heroSocialsCollection } = data?.items[0];
+
+  const handleSubmit: React.FormEventHandler = (e) => {
+    e.preventDefault();
+    console.log("hello", e);
+  };
   return (
     <section id="ourapp">
       <div className={styles.herobannerImg1}>
@@ -60,9 +65,7 @@ const HeroBanner = ({ data }: any) => {
                   method="POST"
                   name="contact v2"
                   data-netlify="true"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                  }}
+                  onSubmit={handleSubmit}
                   data-netlify-honeypot="bot-field"
                 >
                   <div>
