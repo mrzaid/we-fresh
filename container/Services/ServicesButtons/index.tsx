@@ -10,7 +10,7 @@ import "swiper/css";
 const ServicesButton = ({ data, sendContent, heading }: any) => {
   const { items } = data;
   return (
-    <section className={"mt-[0px] mb-[115px]"}>
+    <section className={"mt-[0px] mb-[115px] md:mt-[150px]"}>
       <Container>
         <div className="hidden md:block">
           <div className={`text-bluee py-24 ${styles.heading} `}>

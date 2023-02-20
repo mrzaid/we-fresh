@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { useFormContext } from "react-hook-form";
 
 interface InputProps {
   placeholder: string;
@@ -6,8 +7,8 @@ interface InputProps {
   id: string;
   className: string;
   name: string;
-  value: any;
-  onChange: (e: any) => void;
+  // value: any;
+  // onChange: (e: any) => void;
 }
 
 const Input: FC<InputProps> = ({
@@ -16,9 +17,10 @@ const Input: FC<InputProps> = ({
   name = "phone",
   id,
   className,
-  value,
-  onChange,
+  // value,
+  // onChange,
 }) => {
+  // const { register } = useFormContext();
   return (
     <input
       className={className}
@@ -26,8 +28,9 @@ const Input: FC<InputProps> = ({
       type={type}
       id={id}
       name={name}
-      value={value}
-      onChange={onChange}
+      // {...register(id)}
+      // value={value}
+      // onChange={onChange}
     />
   );
 };

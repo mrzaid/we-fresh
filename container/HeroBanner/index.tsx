@@ -1,5 +1,8 @@
 //Packages
 import React, { useState } from "react";
+import { useForm, FormProvider } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 // Components
 import Button from "../../components/common/Button";
@@ -22,6 +25,20 @@ interface iconsType {
     title: string;
   };
 }
+const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const schema = yup
+  .object({
+    // firstName: yup.string().required(),
+    // age: yup.number().positive().integer().required(),
+    phone_number: yup
+      .string()
+      .required("required")
+      .matches(phoneRegExp, "Phone number is not valid")
+      .max(11, "Number can't exceed 11 digits")
+      .min(11, "Number can't be less than 11 digits"),
+  })
+  .required();
 
 const HeroBanner = ({ data }: any) => {
   const { heroDescription, heroImage, heroSocialsCollection } = data?.items[0];
@@ -63,6 +80,17 @@ const HeroBanner = ({ data }: any) => {
         setLoading(false);
       });
   };
+  const reactform = useForm({
+    resolver: yupResolver(schema),
+    mode: "onChange",
+    // reValidateMode: "onChange",
+  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = reactform;
+  const onSubmit = (data: any) => console.log(data);
 
   return (
     <section id="ourapp">
@@ -96,14 +124,14 @@ const HeroBanner = ({ data }: any) => {
             </div>
 
             <div className="mt-10 flex gap-5 justify-center	">
-              <form
+              {/* <form
                 name="contact"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={formSubmit}
                 action="/success"
               >
-                {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+          
                 <input type="hidden" name="form-name" value="contact" />
                 <p hidden>
                   <label>
@@ -135,7 +163,42 @@ const HeroBanner = ({ data }: any) => {
                     )}
                   </Button>
                 </div>
-              </form>
+              </form> */}
+              <FormProvider {...reactform}>
+                <form
+                  className="flex gap-5 justify-center"
+                  onSubmit={formSubmit}
+                >
+                  {/* <input {...register("firstName")} />
+                <p>{errors.firstName?.message}</p>
+                <input {...register("age")} />
+                <p>{errors.age?.message}</p> */}
+
+                  <div className={`text-base pl-[55px] ${styles.inputfield} `}>
+                    <input
+                      {...register("phone_number")}
+                      className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none hover:bg-slate-50 focus:border-sky-500  border-sgrey border-2"
+                      placeholder="Enter phone number"
+                    />
+                    <p className=" text-red-600 ">
+                      {errors.phone_number?.message}
+                    </p>
+                  </div>
+                  <div>
+                    <Button>
+                      {loading ? (
+                        <i className=" flex justify-center  items-center">
+                          <Loading height={30} width={30} color="#989898" />
+                        </i>
+                      ) : (
+                        <>
+                          <p className="hidden xl:block">Send</p>
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              </FormProvider>
             </div>
 
             <p className="text-center md:text-left text-white mt-8">
