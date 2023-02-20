@@ -118,41 +118,24 @@ const HeroBanner = ({ data }: any) => {
                     placeholder="Enter phone number"
                     type="text"
                     name="phone"
-                    id="1"
-                  />
-                </div>
-                <div>
-                  <Button>Send</Button>
-                </div>
-                <div className="flex flex-col justify-start items-start w-full gap-[10px] xl:gap-[6px]">
-                  <label htmlFor="phone">
-                    <h3>Your Phone</h3>
-                  </label>
-                  <input
                     id="phone"
-                    type="text"
-                    required
-                    name="phone"
-                    className="rounded-xl outline-none w-full border-black border-[1px] border-solid px-5 py-[11px] xl:px-[30px] xl:py-[9px]"
                     value={form.phone}
                     onChange={(e) => {
                       setForm({ ...form, phone: e.target.value });
                     }}
                   />
                 </div>
-                <button
-                  type="submit"
-                  className="mt-[30px] rounded-[30px] modal-btn rounded-tr-[0px] rounded-bl-[0px] w-full xl:mt-[50px] xl:max-w-[300px] h-[50px] xl:h-[56px] flex justify-center items-center"
-                >
-                  {loading ? (
-                    <Loading height={50} width={50} color="#989898" />
-                  ) : (
-                    <>
-                      <p className="hidden xl:block">Send</p>
-                      <p className="block xl:hidden">Schedule Demo</p>
-                    </>
-                  )}
-                </button>
+                <div>
+                  <Button>
+                    {loading ? (
+                      <Loading height={50} width={50} color="#989898" />
+                    ) : (
+                      <>
+                        <p className="hidden xl:block">Send</p>
+                      </>
+                    )}
+                  </Button>
+                </div>
               </form>
             </div>
 

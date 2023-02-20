@@ -6,6 +6,8 @@ interface InputProps {
   id: string;
   className: string;
   name: string;
+  value: any;
+  onChange: (e: any) => void;
 }
 
 const Input: FC<InputProps> = ({
@@ -14,6 +16,8 @@ const Input: FC<InputProps> = ({
   name = "phone",
   id,
   className,
+  value,
+  onChange,
 }) => {
   return (
     <input
@@ -22,6 +26,8 @@ const Input: FC<InputProps> = ({
       type={type}
       id={id}
       name={name}
+      value={value}
+      onChange={onChange}
     />
   );
 };
