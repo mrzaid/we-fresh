@@ -19,7 +19,7 @@ const WeFresh = ({ data }: any) => {
           >
             <RichTextRenderer json={content.json} />
             <div className="min-w-[210px] mt-10 flex md:gap-5 gap-2 justify-center ">
-              <div className=" text-base ">
+              {/* <div className=" text-base ">
                 <Input
                   name="phone"
                   className=" h-8 px-4 w-[170px] md:w-[300px]  hover:bg-slate-50 focus:border-sky-500  rounded outline-none border-sgrey border-2"
@@ -30,7 +30,7 @@ const WeFresh = ({ data }: any) => {
               </div>
               <div className="mb-[88px]">
                 <Button>Send</Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

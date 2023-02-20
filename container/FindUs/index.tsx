@@ -21,7 +21,7 @@ const FindUs = ({ data }: any) => {
             <div className={`pb-32 mt-32 ${styles.heading}`}>
               <RichTextRenderer json={title.json} />
               <div className="mt-10 flex gap-5 ">
-                <div className=" text-base ">
+                {/* <div className=" text-base ">
                   <Input
                     name="phone"
                     className=" h-8 px-4 w-[170px] md:w-[300px]  hover:bg-slate-50 focus:border-sky-500  rounded outline-none border-sgrey border-2	"
@@ -32,7 +32,7 @@ const FindUs = ({ data }: any) => {
                 </div>
                 <div>
                   <Button>Search</Button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

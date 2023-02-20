@@ -23,7 +23,6 @@ const GetApp = ({ data }: any) => {
         <div className="min-w-[220px] md:max-w-[600px]  mx-auto flex items-center justify-center">
           <div className={`mt-[50px] md:mt-[108px] ${styles.getApp}`}>
             <RichTextRenderer json={appDescription.json} />
-
             <div
               className={`mt-10 md:mb-[63pxpx] mb-[83px] flex items-center md:justify-evenly flex-col md:flex-row ${styles.image}`}
             >
