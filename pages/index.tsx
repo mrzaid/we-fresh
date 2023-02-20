@@ -25,6 +25,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       websiteDetails: websiteDetails?.data || null,
       data: fetchedContent?.data || null,
     },
+    revalidate: 60, //incremental static regeneration
   };
 };
 

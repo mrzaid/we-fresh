@@ -59,18 +59,20 @@ const HeroBanner = ({ data }: any) => {
               <RichTextRenderer json={heroDescription.json} />
             </div>
             <div className="mt-10 flex gap-5 justify-center	">
-              <div className={`text-base pl-[55px] ${styles.inputfield} `}>
-                <Input
-                  className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none hover:bg-slate-50 focus:border-sky-500  border-sgrey border-2"
-                  placeholder="Enter phone number"
-                  type="text"
-                  name="phone"
-                  id="1"
-                />
-              </div>
-              <div>
-                <Button>Send</Button>
-              </div>
+              <form name="contact" method="POST" data-netlify="true" action="/">
+                <div className={`text-base pl-[55px] ${styles.inputfield} `}>
+                  <Input
+                    className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none hover:bg-slate-50 focus:border-sky-500  border-sgrey border-2"
+                    placeholder="Enter phone number"
+                    type="text"
+                    name="phone"
+                    id="1"
+                  />
+                </div>
+                <div>
+                  <Button>Send</Button>
+                </div>
+              </form>
             </div>
             <p className="text-center md:text-left text-white mt-8">
               Available on

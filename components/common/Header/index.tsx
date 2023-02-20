@@ -41,18 +41,7 @@ const Header = ({ headerdata }: any) => {
           <div className="flex z-[3] justify-items-start">
             <img src={headerLogo?.url} alt={headerLogo?.title}></img>
           </div>
-          <div>
-            <Link href={"/"} locale="en-US">
-              <a>
-                <button>en</button>
-              </a>
-            </Link>
-            <Link href={"/"} locale="fr">
-              <a>
-                <button>fr</button>
-              </a>
-            </Link>
-          </div>
+
           <div
             onClick={() => setOpen(!open)}
             className="z-[2] text-3xl absolute right-8  top-[22px] cursor-pointer md:hidden w-[15px] h-[12px]"
@@ -85,13 +74,53 @@ const Header = ({ headerdata }: any) => {
                 </Link>
               </li>
             ))}
-
+            <Link href={"/"} locale="en-US">
+              <a>
+                <button
+                  className="relative group px-6 h-6 bg-bluee
+                 before:absolute 
+                 before:inset-0 
+                 before:bg-blue-400
+                 before:scale-x-0 
+                 before:origin-right
+                 before:transition
+                 before:duration-300
+                 hover:before:scale-x-100
+                 hover:before:origin-left
+                 "
+                >
+                  <span className="relative  text-base text-white">
+                    English
+                  </span>
+                </button>
+              </a>
+            </Link>
+            <Link href={"/"} locale="fr">
+              <a>
+                <button
+                  className="relative group px-6 h-6 bg-bluee
+                 before:absolute 
+                 before:inset-0 
+                 before:bg-blue-400
+                 before:scale-x-0 
+                 before:origin-right
+                 before:transition
+                 before:duration-300
+                 hover:before:scale-x-100
+                 hover:before:origin-left
+                 "
+                >
+                  <span className="relative  text-base text-white">French</span>
+                </button>
+              </a>
+            </Link>
             <li className="navbar-button w-full md:hidden">
               <button className="bg-orangee min-w-[280px] w-full rounded h-8">
                 Sign up
               </button>
             </li>
           </ul>
+          <div className="flex gap-3"></div>
         </div>
       </Container>
     </header>
