@@ -3,6 +3,7 @@ import Container from "../../common/Container";
 import styles from "./index.module.scss";
 import { MenuIcon } from "../../common/icon";
 import { CloseIcon } from "../../common/icon";
+import Link from "next/link";
 
 const Header = ({ headerdata }: any) => {
   const headerLogo = headerdata?.items[0]?.headerLogo;
@@ -62,13 +63,11 @@ const Header = ({ headerdata }: any) => {
           >
             {headerLinksCollection?.items?.map(({ text, url }: any) => (
               <li className="li  text-white md:text-black border-blue-100">
-                <a
-                  className={`${styles.hoverunderline}`}
-                  href={url}
-                  target={"_blank"}
-                >
-                  {text}
-                </a>
+                <Link href={url}>
+                  <a className={`${styles.hoverunderline}`} target={"_blank"}>
+                    {text}
+                  </a>
+                </Link>
               </li>
             ))}
 
