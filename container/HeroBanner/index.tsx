@@ -98,7 +98,6 @@ const HeroBanner = ({ data }: any) => {
             <div className="mt-10 flex gap-5 justify-center	">
               <form
                 name="contact"
-                method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={formSubmit}
