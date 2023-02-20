@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 
 //containers
@@ -10,11 +11,14 @@ import { Partners } from "../container/Partners";
 import Question from "../container/Question";
 import { fetchContent } from "../handlers";
 //query
-import { HomePageQuery, WebsiteDetailsQuery } from "../query";
+import { getHomePageQuery, WebsiteDetailsQuery } from "../query";
 
-export async function getStaticProps() {
-  const fetchedContent = await fetchContent(HomePageQuery);
-  const websiteDetails = await fetchContent(WebsiteDetailsQuery);
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const homepageQuery = getHomePageQuery(locale);
+  const websiteDetailsQuery = WebsiteDetailsQuery(locale);
+
+  const fetchedContent = await fetchContent(homepageQuery);
+  const websiteDetails = await fetchContent(websiteDetailsQuery);
 
   return {
     props: {
@@ -22,7 +26,7 @@ export async function getStaticProps() {
       data: fetchedContent?.data || null,
     },
   };
-}
+};
 
 export default function HomePage({ data }: any) {
   const {

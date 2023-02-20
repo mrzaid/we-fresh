@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import Container from "../../common/Container";
 import styles from "./index.module.scss";
 import { MenuIcon } from "../../common/icon";
@@ -9,6 +10,8 @@ const Header = ({ headerdata }: any) => {
   const headerLogo = headerdata?.items[0]?.headerLogo;
   const headerLinksCollection = headerdata?.items[0]?.headerLinksCollection;
   const [open, setOpen] = useState<Boolean>(false);
+
+  // const {  } = useRouter();
 
   useEffect(() => {
     if (open) {
@@ -37,6 +40,18 @@ const Header = ({ headerdata }: any) => {
         <div className="h-24 md:bg-transparent md:flex justify-between items-center py-[24px] ">
           <div className="flex z-[3] justify-items-start">
             <img src={headerLogo?.url} alt={headerLogo?.title}></img>
+          </div>
+          <div>
+            <Link href={"/"} locale="en-US">
+              <a>
+                <button>en</button>
+              </a>
+            </Link>
+            <Link href={"/"} locale="fr">
+              <a>
+                <button>fr</button>
+              </a>
+            </Link>
           </div>
           <div
             onClick={() => setOpen(!open)}
