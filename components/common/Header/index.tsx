@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import Container from "../../common/Container";
 import styles from "./index.module.scss";
 import { MenuIcon } from "../../common/icon";
@@ -10,8 +9,6 @@ const Header = ({ headerdata }: any) => {
   const headerLogo = headerdata?.items[0]?.headerLogo;
   const headerLinksCollection = headerdata?.items[0]?.headerLinksCollection;
   const [open, setOpen] = useState<Boolean>(false);
-
-  // const {  } = useRouter();
 
   useEffect(() => {
     if (open) {
@@ -58,10 +55,10 @@ const Header = ({ headerdata }: any) => {
           </div>
 
           <ul
-            className={`${styles.headernav} gap-14  flex flex-col md:flex-row
+            className={`${styles.headernav} gap-9  flex flex-col md:flex-row
                  md:pb-0  absolute  md:bg-transparent
                  md:static md:z-auto z-[1] left-0 w-full md:w-auto md:mt-[45px] mt-0
-                 md:pl-0 pl-6 pr-6 transition-all duration-300 ease-in-out  bottom-0 ${
+                 pl-0 pl-6 pr-6 transition-all duration-300 ease-in-out  bottom-0 ${
                    open ? "bg-bluee" : " -translate-y-full  "
                  } `}
           >

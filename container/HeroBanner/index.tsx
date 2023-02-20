@@ -10,6 +10,9 @@ import RichTextRenderer from "../../components/common/RichTextRenderer";
 // Styles
 import styles from "./index.module.scss";
 
+//
+import { Loading } from "../../components/common/icon";
+
 interface iconsType {
   socialLink: {
     url: string;
@@ -23,10 +26,44 @@ interface iconsType {
 const HeroBanner = ({ data }: any) => {
   const { heroDescription, heroImage, heroSocialsCollection } = data?.items[0];
 
-  const handleSubmit: React.FormEventHandler = (e) => {
-    e.preventDefault();
-    console.log("hello", e);
+  const [loading, setLoading] = React.useState(false);
+  const [status, setStatus] = React.useState<string>("");
+  const [form, setForm] = useState({
+    "form-name": "contactForm",
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    job: "",
+    topic: "",
+    message: "",
+  });
+
+  const createFormDataObj = (data: any): any => {
+    const formData = new FormData();
+    Object.keys(data).forEach((k) => {
+      formData.append(k, data[k]);
+    });
+    return formData;
   };
+
+  const formSubmit: React.FormEventHandler = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(createFormDataObj(form)).toString(),
+    })
+      .then(() => {
+        setStatus("success");
+      })
+      .catch((error) => alert(error))
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   return (
     <section id="ourapp">
       <div className={styles.herobannerImg1}>
@@ -54,13 +91,27 @@ const HeroBanner = ({ data }: any) => {
                 src={"/assets/fill4mq.png"}
               />
             </div>
-
             <div className={` md:mt-32  ${styles.banner}`}>
               <RichTextRenderer json={heroDescription.json} />
             </div>
+
             <div className="mt-10 flex gap-5 justify-center	">
-              <form name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact v1" />
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                onSubmit={formSubmit}
+                action="/success"
+              >
+                {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden>
+                  <label>
+                    Dont fill this out: <input name="bot-field" />
+                  </label>
+                </p>
+                {loading && <h1>loading</h1>}
                 <div className={`text-base pl-[55px] ${styles.inputfield} `}>
                   <Input
                     className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none hover:bg-slate-50 focus:border-sky-500  border-sgrey border-2"
@@ -73,8 +124,38 @@ const HeroBanner = ({ data }: any) => {
                 <div>
                   <Button>Send</Button>
                 </div>
+                <div className="flex flex-col justify-start items-start w-full gap-[10px] xl:gap-[6px]">
+                  <label htmlFor="phone">
+                    <h3>Your Phone</h3>
+                  </label>
+                  <input
+                    id="phone"
+                    type="text"
+                    required
+                    name="phone"
+                    className="rounded-xl outline-none w-full border-black border-[1px] border-solid px-5 py-[11px] xl:px-[30px] xl:py-[9px]"
+                    value={form.phone}
+                    onChange={(e) => {
+                      setForm({ ...form, phone: e.target.value });
+                    }}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="mt-[30px] rounded-[30px] modal-btn rounded-tr-[0px] rounded-bl-[0px] w-full xl:mt-[50px] xl:max-w-[300px] h-[50px] xl:h-[56px] flex justify-center items-center"
+                >
+                  {loading ? (
+                    <Loading height={50} width={50} color="#989898" />
+                  ) : (
+                    <>
+                      <p className="hidden xl:block">Send</p>
+                      <p className="block xl:hidden">Schedule Demo</p>
+                    </>
+                  )}
+                </button>
               </form>
             </div>
+
             <p className="text-center md:text-left text-white mt-8">
               Available on
             </p>
