@@ -59,7 +59,8 @@ const HeroBanner = ({ data }: any) => {
               <RichTextRenderer json={heroDescription.json} />
             </div>
             <div className="mt-10 flex gap-5 justify-center	">
-              <form name="contact" method="POST" data-netlify="true" action="/">
+              <form name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact v1" />
                 <div className={`text-base pl-[55px] ${styles.inputfield} `}>
                   <Input
                     className=" h-8 px-4 w-[170px] md:w-[300px] rounded outline-none hover:bg-slate-50 focus:border-sky-500  border-sgrey border-2"
