@@ -29,7 +29,7 @@ const HeroBanner = ({ data }: any) => {
   const [loading, setLoading] = React.useState(false);
   const [status, setStatus] = React.useState<string>("");
   const [form, setForm] = useState({
-    "form-name": "contactForm",
+    "form-name": "contact",
     name: "",
     email: "",
     company: "",
